@@ -3,7 +3,6 @@ import {BrowserRouter,Route} from 'react-router-dom';
 
 import Landing from '../landing/landing.js';
 import Dashboard from '../dashboard/dashboard.js';
-// import NoteCreateForm from '../note-create-form/note-create-form.js';
 // import NoteList from '../note-list/note-list.js';
 // import NoteItem from '../note-item/note-item.js';
 import '../../style/main.scss';
