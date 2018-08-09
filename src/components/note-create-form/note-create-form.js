@@ -13,9 +13,12 @@ constructor(props) {
     editing: false,
     completed: false,
   };
+
+  this.onSubmit = this.onSubmit.bind(this);
+  this.onChange = this.onChange.bind(this);
 }
 
-  onSubmit = event => {
+  onSubmit(event) {
     event.preventDefault();
     this.props.onSubmit({ ...this.state, id: uuid() });
     this.setState({
@@ -24,7 +27,7 @@ constructor(props) {
     })
   };
 
-  onChange = event => {
+  onChange(event) {
     const val =
       event.target.type === "checkbox"
         ? event.target.checked
@@ -39,7 +42,7 @@ constructor(props) {
   render() {
     return(
       <React.Fragment>
-        <form onSubmit={this.addNote} onChange={this.onChange}>
+        <form onSubmit={this.onSubmit} onChange={this.onChange}>
           <input name="title" placeholder="Title" value={this.state.title}/>
           <input name="content" placeholder="Content" value={this.state.content}/>
           <label>
