@@ -14,7 +14,6 @@ class Dashboard extends React.Component {
 
         this.addNote = this.addNote.bind(this);
         this.removeNote = this.removeNote.bind(this);
-        
 
     }
 
@@ -33,7 +32,7 @@ class Dashboard extends React.Component {
             <React.Fragment>
                 <h2>Notes App</h2>
                 <NoteForm onSubmit={this.addNote} />
-                <NoteList notes={this.state.notes} />
+                <NoteList notes={this.state.notes} onRemove={this.removeNote}/>
             </React.Fragment>
         );
     }
